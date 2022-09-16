@@ -110,7 +110,7 @@ exports.CreateTask = (req, res) => {
                                               console.log(err2)
                                               res.status(500).json({ code: 500 })
                                             } else {
-                                              res.status(201).json({ code: 201 })
+                                              res.status(201).json({ code: 201, message: "Task Created Successfuuly", Task_Id: appname + "_" + id })
                                             }
                                           })
                                         }
@@ -283,7 +283,7 @@ exports.PromoteTask2Done = (req, res) => {
                                                   })
                                                 })
                                               }
-                                              res.status(200).json({ code: 200 })
+                                              res.status(200).json({ code: 200, message: "Successful push to Done state" })
                                             }
                                           })
                                         } else {
@@ -353,7 +353,7 @@ exports.GetTaskbyState = (req, res) => {
                       if (result1.length === 0) {
                         res.status(400).json({ code: 400 })
                       } else {
-                        res.status(200).send(result1)
+                        res.status(200).json({ code: 200, result: result1 })
                       }
                     }
                   })
