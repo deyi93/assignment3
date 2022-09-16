@@ -20,5 +20,7 @@ module.exports = {
   validateEmail: check("email").trim().isEmail().withMessage("Please enter a valid email").optional(),
   validatespace: check("taskname").trim().notEmpty().withMessage("pls enter a valid task name"),
   validateappname: check("appname").trim().notEmpty().withMessage("pls enter a valid app name"),
-  validateplan: check("planname").trim().notEmpty().withMessage("pls enter a valid plan name")
+  validateplan: check("planname").trim().notEmpty().withMessage("pls enter a valid plan name"),
+  validloginusername: check("username").trim().notEmpty().withMessage("Username cannot be empty").isString(),
+  validloginpassowrd: check("password").trim().notEmpty().withMessage("password cannot be empty")
 }
